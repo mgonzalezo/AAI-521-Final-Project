@@ -1,0 +1,73 @@
+Team Project Status Update Form
+
+Complete as a team and designate a team lead to submit to the group assignment link in Module 4. 
+Team Information
+Team Number: 
+Team Members [Full Names]:
+•	 Vijay Agarwal 
+•	 Marco Gonzalez
+•	 Ritesh Jain 
+Team Leader/Representative: Marco Gonzalez
+Team GitHub Link: 	mgonzalezo/AAI-521-Final-Project
+If you are using any cloud services in addition to GitHub to host and transfer data, provide the link.
+Not yet decided – will update if using later on 
+Project Description
+•	Project Title:  Fast object recognition of flower type in a video scene for further action to dispense the perfume/scent of the identified flower. 
+•	Short Description/Project Objectives: While special effects in vision, and sound has been improvised to give an immersive experience to the movie watcher, the sense of smell has been has not been addressed so far to improve upon the total enjoyment experience. In this project we propose identification of movie or video scenes for proper scent or perfume disposal in movie theatres or home theatre environment simultaneously with minimal time lag to enhance the user experience. The scenes could be a garden of flowers, waterfall, forest, beach etc. In this project we take identification of flower type in video as a case example to demonstrate the feasibility. The hardware part of perfume dispensing is out of the scope of this project however the output of this computer vision model in form of perfume id can be fed to a mems based microfluidic device to dispense the correct scent. 
+
+Project Dataset 
+•	Selected Dataset: [Name/Link]
+Various videos on youtube for flower for flower image frame captures 
+
+
+
+For training the model 
+https://www.tensorflow.org/datasets/catalog/tf_flowers
+
+https://www.kaggle.com/datasets/alxmamaev/flowers-recognition
+
+https://www.researchgate.net/figure/Oxford-102-Flower-dataset-with-annotation-which-contains-102-categories-of-flowers-can_fig3_345039740
+
+https://universe.roboflow.com/search?q=class%3Aflower
+
+•	Description of Your Selected Dataset (data source, number of images, dimension of images, size of dataset, etc.):
+             Not yet selected 	
+Description and Requirements
+•	What is the task, and why does it matter?  
+To capture flower images in a video or film for further action to actuate perfume dispenser 
+It matters to enhance film watcher experience in theatre or home 
+
+•	How were the data measures, how raw is this dataset? For example, what type of camera(s) were used, have the photos been cropped or edited before you started using them? 
+Detailed specifications will be provided for the dataset selected 
+Will use pre-processing as per need when working on the project 
+
+•	Has this dataset been used a lot in the past for computer vision, either papers, applications, competitions and similar uses?
+Yes, the following paper has used the Oxford dataset 
+
+https://iopscience.iop.org/article/10.1088/1742-6596/1237/3/032045?utm_source=researchgate.net&medium=article
+
+•	What is the feature extraction plan?  
+Not yet finalized 
+
+•	Is there any bad data, cropped image…? (This is not a hard stop, there are several ways we can handle this problem) 
+Team Responsibilities
+What are the contributions and areas of responsibility of each team member for the project?  
+
+Member 1 (Name)	Member 2 (Name)	Member 3 (if applicable)
+
+Vijay Agarwal 
+Project idea and formulation, 
+Selection of video data for image capture, model testing, summary of results, Report preparation 	
+
+Marco Gonzalezo
+Coding, selection of flower video and training data, model training  and validation 
+Submission of project code, Github updates	
+
+Ritesh Jain 
+Model training, Validation, testing 
+Analysis and discussion of results 
+Presentation/ Report preparation 
+
+Comments/ Roadblocks: 	
+
+
