@@ -1,0 +1,4 @@
+Model,Test Accuracy (%),Top-5 Accuracy (%),Test Loss,Avg Inference Time (ms),FPS
+VGG16,43.32,71.48,2.5368,99.41,10.06
+ResNet50,2.24,9.37,4.5561,66.60,15.01
+MobileNetV2,73.51,91.56,1.1197,72.05,13.88
