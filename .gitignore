@@ -1,0 +1,87 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Operating System
+.DS_Store
+Thumbs.db
+
+# Project Specific - Exclude large/generated files
+# Results folder - exclude visualization images but keep text reports
+results/*.png
+results/*.jpg
+results/*.jpeg
+
+# Keep text reports and CSV files in results
+!results/*.txt
+!results/*.csv
+
+# Exclude trained models - too large for GitHub (100MB+ files)
+models/*.keras
+models/*.h5
+models/*.pb
+
+# Keep MODEL_CARD.md for documentation
+!models/MODEL_CARD.md
+
+# Dataset cache
+data/
+*.tfrecord
+*.cache
+
+# TensorFlow specific
+*.ckpt
+*.ckpt.*
+checkpoint
+saved_model/
+
+# Logs
+logs/
+*.log
+
+# Large output files
+*.png
+*.jpg
+*.jpeg
+*.mp4
+*.avi
+
+# Keep only essential files in results (if any small text reports are needed)
+!results/*.txt
+!results/*.csv
