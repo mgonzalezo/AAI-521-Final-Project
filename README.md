@@ -146,10 +146,38 @@ Three deep learning architectures were implemented and compared:
 
 ### 5. Results and Findings
 
-Results will be generated when you run the notebook. Expected performance based on similar implementations:
-- **Accuracy:** 70-90% (depending on model)
-- **Inference Speed:** Varies by model (VGG16 typically ~50-100ms, MobileNetV2 faster)
-- **Real-time Capability:** Achievable with optimized models
+**Model Performance Summary:**
+
+| Model | Test Accuracy | Top-5 Accuracy | Inference Time | FPS |
+|-------|--------------|----------------|----------------|-----|
+| **MobileNetV2** | **73.51%** | **91.56%** | **72.05 ms** | **13.88** |
+| VGG16 | 43.32% | 71.48% | 99.41 ms | 10.06 |
+| ResNet50 | 2.24% | 9.37% | 66.60 ms | 15.01 |
+
+**Key Findings:**
+
+1. **MobileNetV2 Outperforms All Models:**
+   - Achieved highest accuracy (73.51%) with fastest practical inference (72.05ms)
+   - Excellent top-5 accuracy (91.56%) enables multi-scent selection
+   - Best balance of speed and accuracy for real-time scent dispensing
+   - Meets the <130ms target for synchronized scent delivery
+
+2. **Limited Training Data Impact:**
+   - Small training set (1,020 samples) significantly limited model performance
+   - VGG16 achieved only 43.32% accuracy (below reference paper's 83.64%)
+   - ResNet50 severely underperformed (2.24%) due to overfitting on limited data
+   - Deeper architectures require more training samples to perform effectively
+
+3. **Real-Time Processing Achieved:**
+   - All models meet the <130ms inference time requirement
+   - MobileNetV2 provides optimal speed-accuracy trade-off at 72ms per frame
+   - System can process 13-15 FPS, suitable for real-time video analysis
+
+4. **Architecture Insights:**
+   - Lightweight models (MobileNetV2) performed best with limited training data
+   - VGG16 showed moderate performance but slower inference
+   - ResNet50's depth became a liability with insufficient training samples
+   - Transfer learning alone insufficient without adequate domain-specific data
 
 ---
 
@@ -372,6 +400,55 @@ This project is inspired by:
 - **Architecture:** Added ResNet50 and MobileNetV2 for comparison
 - **Framework:** TensorFlow/Keras vs. paper's implementation
 - **Objective:** Scent dispensing vs. general flower recognition
+
+---
+
+## Limitations and Future Work
+
+### Current Limitations
+
+1. **Insufficient Training Data:**
+   - Oxford 102 Flowers training set contains only 1,020 samples (10 samples per class)
+   - Limited data severely constrains model performance, particularly for deeper architectures
+   - Data engineering opportunities were restricted by small sample size
+   - Insufficient diversity for robust feature learning across 102 classes
+
+2. **Model Performance Constraints:**
+   - VGG16 achieved 43.32% accuracy, significantly below reference paper's 83.64%
+   - ResNet50 failed to converge effectively (2.24% accuracy) due to overfitting
+   - Performance gap indicates need for substantially larger training dataset
+
+3. **Real-World Deployment Challenges:**
+   - Testing conducted only on isolated flower images, not complex video scenes
+   - Multi-flower detection in single frames requires object detection architectures
+   - Integration with physical scent dispensing hardware not implemented
+   - Temporal consistency across video frames not addressed
+
+### Future Improvements
+
+1. **Data Augmentation and Collection:**
+   - Collect additional training samples to reach 100+ images per class
+   - Implement advanced augmentation: CutMix, MixUp, AutoAugment
+   - Explore synthetic data generation using GANs or diffusion models
+   - Consider semi-supervised learning with unlabeled flower images
+
+2. **Architecture Enhancements:**
+   - Fine-tune MobileNetV2 with unfrozen base layers for higher accuracy
+   - Implement object detection (SSD, YOLO) for multi-flower scene analysis
+   - Add temporal smoothing for consistent predictions across video frames
+   - Explore vision transformers (ViT) for improved feature extraction
+
+3. **Deployment Optimization:**
+   - Model quantization (INT8) for faster inference and edge deployment
+   - TensorFlow Lite conversion for mobile/embedded systems
+   - Batch processing for multiple flowers in single frame
+   - Hardware integration with IoT scent dispensing systems
+
+4. **Application Extension:**
+   - Expand to other nature scenes: forests, beaches, waterfalls, gardens
+   - Implement scene classification for broader scent categories
+   - Add confidence thresholding and user preferences
+   - Develop temporal scent transition strategies for smooth experiences
 
 ---
 
